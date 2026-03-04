@@ -150,7 +150,7 @@ function rebuildTrackSystem() {
 
 async function init() {
   try {
-    trackData = await loadTracks(new URL("data/tracks.bin", import.meta.url).href);
+    trackData = await loadTracks(import.meta.env.BASE_URL + "data/tracks.bin");
 
     info.textContent = `Loaded ${trackData.nTracks.toLocaleString()} tracks (${trackData.totalPoints.toLocaleString()} points)`;
 
